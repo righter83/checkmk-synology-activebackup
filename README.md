@@ -10,6 +10,10 @@ Tested on:
 
 ## Install
 * Copy the scripty to your Synology NAS and make it excecutable.
+```cd /volume1
+wget https://raw.githubusercontent.com/righter83/checkmk-synology-activebackup/main/check_ab.php
+chmod +x check_ab.php
+```
 * Install the SSH Key from CheckMK on your NAS.
 * Afterwards you have to configure the Check in CheckMK:
 Go to Services -> Other Services and add a "Check via SSH service"
