@@ -22,6 +22,6 @@ If you run a job daily you should adjust the config variable runtime to 86500 ->
 You can also disable this check if you set the runtimecheck variable to False
 
 ## Outputs
-![](https://github.com/righter83/checkmk-synology-activebackup/tree/main/images/ok.png)
+![](https://github.com/righter83/checkmk-synology-activebackup/raw/main/images/ok.png)
 
 ![](https://github.com/righter83/checkmk-synology-activebackup/images/error.png)
