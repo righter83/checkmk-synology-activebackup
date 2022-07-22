@@ -10,7 +10,8 @@ Tested on:
 
 ## Install
 * Copy the scripty to your Synology NAS and make it excecutable.
-```cd /volume1
+```
+cd /volume1
 wget https://raw.githubusercontent.com/righter83/checkmk-synology-activebackup/main/check_ab.php
 chmod +x check_ab.php
 ```
