@@ -1,6 +1,9 @@
 #!/bin/php
 <?php
 
+// https://github.com/righter83/checkmk-synology-activebackup
+// v1.0
+
 // open DBs
 $dbt=new SQLite3("/volume1/@ActiveBackup/config.db");
 $dbj=new SQLite3("/volume1/@ActiveBackup/activity.db");
