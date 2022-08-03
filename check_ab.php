@@ -55,7 +55,7 @@ while($tasks=$task->fetchArray())
         }
 	if ($error == 0)
 	{
-		$out.="OK: $jobs[task_name] runned successfully -- ";
+		$out.="OK: $jobs[task_name] ran successfully -- ";
 	}
 
 }
