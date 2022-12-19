@@ -14,6 +14,7 @@ $runtimehuman=gmdate("H:i:s", $runtime);
 $runtimecheck=True;
 $tsnow=Time();
 $now=date("d.m.Y H:m", $tsnow);
+$exit_error=0;
 
 // get configure tasks
 $task=$dbt->query("select task_id,task_name from task_table");
@@ -30,6 +31,7 @@ while($tasks=$task->fetchArray())
 	{
 		$out.="ERROR: $jobs[task_name] was not running inside runtime window (Now: $now, Last Start: $start, Not older as:. $runtimehuman ) -- ";
 		$error=2;
+                $exit_error=2;
 	}
 
 	// check if job is running
@@ -44,6 +46,7 @@ while($tasks=$task->fetchArray())
 	{
 		$out.="WARN: $jobs[task_name] had Warnings -- ";
 		$error=1;
+                $exit_error=1;
 	}
 
 	// errors
@@ -51,6 +54,7 @@ while($tasks=$task->fetchArray())
         {
                 $out.="ERROR: $jobs[task_name] had an Error -- ";
                 $error=2;
+                $exit_error=2;
         }
 	if ($error == 0)
 	{
@@ -60,4 +64,4 @@ while($tasks=$task->fetchArray())
 }
 
 echo $out;
-exit($error);
+exit($exit_error);
