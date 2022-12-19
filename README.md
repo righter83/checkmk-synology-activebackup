@@ -1,4 +1,14 @@
 # checkmk-synology-activebackup
+
+## Changes
+
+### v1.1 
+- corrected error handling with multiple jobs
+- ignored deleting backup retention taskst
+
+### v1.0
+inital relase
+
 ## Info
 
 This scripts is written for CheckMK.
@@ -30,3 +40,5 @@ You can also disable this check if you set the runtimecheck variable to False
 ![](https://github.com/righter83/checkmk-synology-activebackup/raw/main/images/ok.png)
 
 ![](https://github.com/righter83/checkmk-synology-activebackup/raw/main/images/error.png)
+
+
