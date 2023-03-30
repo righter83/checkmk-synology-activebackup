@@ -14,7 +14,7 @@ inital relase
 This scripts is written for CheckMK.
 It uses the SQLite Databases to get the job results for the Synology Active Backups.
 Tested on:
-- CheckMK 2.0
+- CheckMK 2.1
 - Synology DSM 7.1
 - Active Backup for Business 2.4.1
 
