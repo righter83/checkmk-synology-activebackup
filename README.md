@@ -2,6 +2,9 @@
 
 ## Changes
 
+### v1.2
+- declared variable out to avoid a warning
+  
 ### v1.1 
 - corrected error handling with multiple jobs
 - ignored deleting backup retention taskst
