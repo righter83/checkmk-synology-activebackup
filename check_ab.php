@@ -2,7 +2,7 @@
 <?php
 
 // https://github.com/righter83/checkmk-synology-activebackup
-// v1.1
+// v1.2
 
 // open DBs
 $dbt=new SQLite3("/volume1/@ActiveBackup/config.db");
@@ -15,6 +15,7 @@ $runtimecheck=True;
 $tsnow=Time();
 $now=date("d.m.Y H:m", $tsnow);
 $exit_error=0;
+$out="";
 
 // get configure tasks
 $task=$dbt->query("select task_id,task_name from task_table");
