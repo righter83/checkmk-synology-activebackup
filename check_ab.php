@@ -16,8 +16,7 @@ $tsnow=Time();
 $now=date("d.m.Y H:m", $tsnow);
 $exit_error=0;
 $out="";
-$excludes=array("/server1/i", "/client\-pc/i");
-
+$excludes=array();
 
 // get configure tasks
 $task=$dbt->query("select task_id,task_name from task_table");
