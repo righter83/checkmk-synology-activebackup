@@ -30,13 +30,16 @@ while($tasks=$task->fetchArray())
 	$start=date("d.m.Y H:m", $jobs['time_start']);
 	
 	// exclude some defined jobs
-    	foreach ($excludes as $exclude)
-    	{
-        	if (preg_match("$exclude", $jobs['task_name']))
-        	{
-            		continue 2;
-        	}
-    	}
+	if (!empty($excludes))
+	{
+		foreach ($excludes as $exclude)
+		{
+			if (preg_match("$exclude", $jobs['task_name']))
+			{
+				continue 2;
+			}
+    		}
+	}
 	
 	// check if job started < runtime
 	if (($tsnow-$runtime) > $jobs['time_start'] && $runtimecheck)
