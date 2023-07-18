@@ -2,6 +2,9 @@
 
 ## Changes
 
+### v1.3
+- added option to skip Jobs with a specific name
+  
 ### v1.2
 - declared variable out to avoid a warning
   
