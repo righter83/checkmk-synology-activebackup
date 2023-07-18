@@ -3,7 +3,10 @@
 ## Changes
 
 ### v1.3
-- added option to skip Jobs with a specific name
+- added option to skip Jobs with a specific name. Example:
+```
+$excludes=array("/server1/i", "/client\-pc/i");
+```
   
 ### v1.2
 - declared variable out to avoid a warning
