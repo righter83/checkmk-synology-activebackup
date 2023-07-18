@@ -2,7 +2,7 @@
 <?php
 
 // https://github.com/righter83/checkmk-synology-activebackup
-// v1.2
+// v1.3
 
 // open DBs
 $dbt=new SQLite3("/volume1/@ActiveBackup/config.db");
@@ -16,6 +16,8 @@ $tsnow=Time();
 $now=date("d.m.Y H:m", $tsnow);
 $exit_error=0;
 $out="";
+$excludes=array("/server1/i", "/client\-pc/i");
+
 
 // get configure tasks
 $task=$dbt->query("select task_id,task_name from task_table");
@@ -26,7 +28,16 @@ while($tasks=$task->fetchArray())
 	$job=$dbj->query("select * from result_table where task_id=$tasks[task_id] and job_action=1 order by result_id desc limit 1");
 	$jobs=$job->fetchArray();
 	$start=date("d.m.Y H:m", $jobs['time_start']);
-
+	
+	// exclude some defined jobs
+    	foreach ($excludes as $exclude)
+    	{
+        	if (preg_match("$exclude", $jobs['task_name']))
+        	{
+            		continue 2;
+        	}
+    	}
+	
 	// check if job started < runtime
 	if (($tsnow-$runtime) > $jobs['time_start'] && $runtimecheck)
 	{
