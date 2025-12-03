@@ -1,3 +1,7 @@
+# NEW VERSION
+Don't use this anymore: here a plugin which uses the API: https://github.com/righter83/checkmk_plugin_synology_backup
+
+
 # checkmk-synology-activebackup
 
 ## Changes
